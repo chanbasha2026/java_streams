@@ -5,10 +5,36 @@ import java.util.Objects;
 public class Employee {
     private String name;
     private String email;
+    private int age;
+    private String gender;
+
+    public Employee(String name, String email, int age, String gender) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+    }
+
 
     public Employee(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getName() {
@@ -32,18 +58,8 @@ public class Employee {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(name, employee.name) && Objects.equals(email, employee.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, email);
     }
 }
